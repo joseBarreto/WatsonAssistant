@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ViewCell
+    x:Class="WatsonAssistant.ChatCellUI.BotCell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    mc:Ignorable="d">
+    <Grid Padding="5" ColumnSpacing="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="40" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Image
+            Grid.Row="0"
+            Grid.Column="0"
+            Aspect="AspectFill"
+            HeightRequest="35"
+            HorizontalOptions="Center"
+            Source="bot"
+            VerticalOptions="Center"
+            WidthRequest="35" />
+
+        <pancake:PancakeView
+            Grid.Row="0"
+            Grid.Column="1"
+            Padding="20,10,20,10"
+            BorderColor="#818181"
+            BorderThickness="2"
+            CornerRadius="60,60,0,60"
+            HorizontalOptions="Start"
+            VerticalOptions="Start">
+            <Image Aspect="AspectFit" Source="{Binding Image}" />
+            <Label
+                Text="{Binding Text}"
+                TextColor="Black"
+                VerticalOptions="Start" />
+        </pancake:PancakeView>
+
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="1"
+            FontSize="Micro"
+            Text="{Binding MessageDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}"
+            TextColor="Gray"
+            VerticalOptions="Start" />
+    </Grid>
+</ViewCell>

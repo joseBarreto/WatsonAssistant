@@ -17,5 +17,30 @@ namespace WatsonAssistant
         {
             InitializeComponent();
         }
+
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            lbEntrar.IsVisible = true;
+        }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+
+            lbEntrar.IsVisible = false;
+            var task = slContent.TranslateTo(0, -(slContent.Height) + 105, 2000);
+
+            _ = Task.Run(async () =>
+            {
+                var p = new ChatPage();
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await task;
+                    Application.Current.MainPage = p;
+
+                });
+            });
+        }
     }
 }

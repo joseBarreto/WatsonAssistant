@@ -1,16 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="WatsonAssistant.MainPage">
+<ContentPage
+    x:Class="WatsonAssistant.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    mc:Ignorable="d">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout
+        x:Name="slContent"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="1"
+                Margin="30,0"
+                FontSize="Title"
+                HorizontalOptions="Start">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Como posso" />
+                        <Span Text="&#x0a;" />
+                        <Span Text="te ajudar?" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Image
+                Grid.Row="2"
+                HorizontalOptions="Center"
+                Source="Doctors" />
+
+            <StackLayout Grid.Row="3" Margin="0,0,0,10">
+                <pancake:PancakeView
+                    Padding="10"
+                    BorderColor="#E5E5E5"
+                    BorderIsDashed="True"
+                    BorderThickness="5"
+                    CornerRadius="180"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+
+                    <!--<Image Source="add"  />-->
+                    <ImageButton
+                        x:Name="imgEntrar"
+                        BackgroundColor="White"
+                        Clicked="ImageButton_Clicked"
+                        HeightRequest="40"
+                        Source="add"
+                        WidthRequest="40" />
+
+                </pancake:PancakeView>
+                <Label
+                    x:Name="lbEntrar"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    Text="Aperte para começar" />
+            </StackLayout>
+        </Grid>
     </StackLayout>
-
 </ContentPage>
