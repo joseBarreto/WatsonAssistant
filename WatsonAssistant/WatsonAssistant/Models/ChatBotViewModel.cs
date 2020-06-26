@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using WatsonAssistant.Services;
 
 namespace WatsonAssistant.Models
 {
