@@ -29,7 +29,7 @@ namespace WatsonAssistant
         {
 
             lbEntrar.IsVisible = false;
-            var task = slContent.TranslateTo(0, -(slContent.Height) + 105, 2000);
+            var task = slContent.TranslateTo(0, -(slContent.Height) + 105, 1000);
 
             _ = Task.Run(async () =>
             {
